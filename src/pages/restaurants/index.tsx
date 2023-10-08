@@ -1,5 +1,5 @@
 import React from 'react';
-import Restaurants from '../../sections/restaurants/Restaurants'
+import Restaurants from '@/sections/restaurants/Restaurants'
 
 const RestaurantsPage = () => {
   return (
