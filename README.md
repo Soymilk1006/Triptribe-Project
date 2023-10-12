@@ -1,5 +1,13 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## The frontend is built with the following technologies:
+[Reactjs]
+[Nextjs]
+[ContextAPI]
+[Typescript]
+[TailwindCSS]
+[MaterialUI]
+
 ## Getting Started
 
 First, run the development server:
