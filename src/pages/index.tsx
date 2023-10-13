@@ -1,9 +1,12 @@
 import React from 'react';
-import HomePage from '@/sections/home/HomePage'
+import HomePage from '@/sections/home/HomePage';
+import { Layout } from '@/layouts/MainLayout'
 
 const Home = () => {
   return (
-    <HomePage />
+    <Layout>
+      <HomePage />
+    </Layout>
   )
 };
 
