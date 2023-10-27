@@ -6,11 +6,11 @@ const AttractionDetailPage = () => {
   const { attractionId } = router.query;
   const [attractionData, setAttractionData] = useState(0);
 
-   useEffect(() => {
+  useEffect(() => {
     if (attractionId) {
       setTimeout(() => {
         setAttractionData(999);
-      }, 1000); 
+      }, 1000);
     }
   }, [attractionId]);
 
@@ -19,7 +19,7 @@ const AttractionDetailPage = () => {
       <h1>Attraction Detail Page</h1>
       {attractionData ? (
         <>
-          <h1>Attraction: {attractionData}</h1> 
+          <h1>Attraction: {attractionData}</h1>
         </>
       ) : (
         <p>Loading...</p>

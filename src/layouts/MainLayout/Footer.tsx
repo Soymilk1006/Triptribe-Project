@@ -12,9 +12,9 @@ const Footer = () => {
   };
 
   return (
-    <Box sx={footerStyle}>        
-        {/* other Footer contents*/}
-        &copy; TripTribe 2023
+    <Box sx={footerStyle}>
+      {/* other Footer contents*/}
+      &copy; TripTribe 2023
     </Box>
   );
 };
