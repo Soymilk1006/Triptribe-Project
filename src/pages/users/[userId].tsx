@@ -6,11 +6,11 @@ const UserDetailPage = () => {
   const { userId } = router.query;
   const [userData, setUserData] = useState(0);
 
-   useEffect(() => {
+  useEffect(() => {
     if (userId) {
       setTimeout(() => {
         setUserData(666);
-      }, 1000); 
+      }, 1000);
     }
   }, [userId]);
 
@@ -19,7 +19,7 @@ const UserDetailPage = () => {
       <h1>User Detail Page</h1>
       {userData ? (
         <>
-          <h1>user: {userData}</h1> 
+          <h1>user: {userData}</h1>
         </>
       ) : (
         <p>Loading...</p>

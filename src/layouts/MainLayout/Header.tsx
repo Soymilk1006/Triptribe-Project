@@ -12,15 +12,11 @@ const Header: React.FC = () => {
   };
 
   return (
-    <AppBar position="static" style={appBarStyle} elevation={0}>
-      <Toolbar>
-        <nav>
-          <ul>
-            <li><a href="/">Home</a></li>
-          </ul>
-        </nav>
-      </Toolbar>
-    </AppBar>
+    <AppBar
+      position="static"
+      sx={appBarStyle}
+      elevation={0}
+    ></AppBar>
   );
 };
 

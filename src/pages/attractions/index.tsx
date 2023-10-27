@@ -1,12 +1,8 @@
 import React from 'react';
-import Attractions from '@/sections/attractions/Attractions'
+import Attractions from '@/sections/attractions/Attractions';
 
 const AttractionsPage = () => {
-  return (
-    <Attractions />
-  );
+  return <Attractions />;
 };
 
 export default AttractionsPage;
-
-
