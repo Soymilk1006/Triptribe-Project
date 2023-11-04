@@ -1,9 +1,9 @@
-import { Box } from '@mui/material';
-import React from 'react';
-import Attractions from '@/sections/attractions/Attractions';
+import { NextPage } from 'next/types';
+import MainPage from '@/sections/restaurant-attraction-page/main-page';
+import { MainType } from '@/types/general';
 
-const AttractionsPage = () => {
-  return <Attractions />;
+const Page: NextPage = () => {
+  return <MainPage type={MainType.Attraction} />;
 };
 
-export default AttractionsPage;
+export default Page;
