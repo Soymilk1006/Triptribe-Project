@@ -1,8 +1,9 @@
-import React from 'react';
-import Restaurants from '@/sections/restaurants/Restaurants';
+import { NextPage } from 'next/types';
+import MainPage from '@/sections/restaurant-attraction-page/main-page';
+import { MainType } from '@/types/general';
 
-const RestaurantsPage = () => {
-  return <Restaurants />;
+const Page: NextPage = () => {
+  return <MainPage type={MainType.Restaurant} />;
 };
 
-export default RestaurantsPage;
+export default Page;

@@ -4,12 +4,12 @@ import { useEffect, useState } from 'react';
 const AttractionDetailPage = () => {
   const router = useRouter();
   const { attractionId } = router.query;
-  const [attractionData, setAttractionData] = useState(0);
+  const [attractionData, setAttractionData] = useState<string>('');
 
   useEffect(() => {
     if (attractionId) {
       setTimeout(() => {
-        setAttractionData(999);
+        setAttractionData(attractionId as string);
       }, 1000);
     }
   }, [attractionId]);
@@ -17,13 +17,7 @@ const AttractionDetailPage = () => {
   return (
     <div>
       <h1>Attraction Detail Page</h1>
-      {attractionData ? (
-        <>
-          <h1>Attraction: {attractionData}</h1>
-        </>
-      ) : (
-        <p>Loading...</p>
-      )}
+      {attractionData ? <h1>Attraction: {attractionData}</h1> : <p>Loading...</p>}
     </div>
   );
 };
