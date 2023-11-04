@@ -1,22 +1,28 @@
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
+import { TopNav } from '@/layouts/MainLayout/HeaderLayout/TopNav';
 
 const Header: React.FC = () => {
-  const appBarStyle = {
-    backgroundColor: '#ffcf33',
-    color: '#111927',
-    position: 'fixed',
-    width: '100%',
-    top: 0,
-  };
+  // const appBarStyle = {
+  //   backgroundColor: '#ffcf33',
+  // color: '#111927',
+  //   position: 'fixed',
+  //   width: '100%',
+  //   top: 0,
+  // };
 
   return (
     <AppBar
-      position="static"
-      sx={appBarStyle}
+      component="nav"
+      position="sticky"
+      sx={{ bgcolor: 'white', color: 'inherit', borderBottom: '1px solid' }}
       elevation={0}
-    ></AppBar>
+    >
+      <Toolbar>
+        <TopNav />
+      </Toolbar>
+    </AppBar>
   );
 };
 
