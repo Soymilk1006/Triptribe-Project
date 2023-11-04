@@ -4,12 +4,12 @@ import { useEffect, useState } from 'react';
 const RestaurantDetailPage = () => {
   const router = useRouter();
   const { restaurantId } = router.query;
-  const [restaurantData, setRestaurantData] = useState(0);
+  const [restaurantData, setRestaurantData] = useState<string>('');
 
   useEffect(() => {
     if (restaurantId) {
       setTimeout(() => {
-        setRestaurantData(888);
+        setRestaurantData(restaurantId as string);
       }, 1000);
     }
   }, [restaurantId]);
@@ -17,13 +17,7 @@ const RestaurantDetailPage = () => {
   return (
     <div>
       <h1>Restaurant Detail Page</h1>
-      {restaurantData ? (
-        <>
-          <h1>Restaurant: {restaurantData}</h1>
-        </>
-      ) : (
-        <p>Loading...</p>
-      )}
+      {restaurantData ? <h1>Restaurant: {restaurantData}</h1> : <p>Loading...</p>}
     </div>
   );
 };

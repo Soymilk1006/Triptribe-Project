@@ -1,6 +1,4 @@
-import type { SVGProps } from 'react';
-
-const IconLeftArrow = (props: SVGProps<SVGSVGElement>) => (
+const IconLeftArrow = () => (
   <svg
     width="14"
     height="14"
