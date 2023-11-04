@@ -1,7 +1,6 @@
 {
   "extends": ["next/core-web-vitals", "plugin:prettier/recommended"],
   "rules": {
-    "prettier/prettier": "error",
     "indent": ["error", 2],
     "quotes": ["error", "single"],
     "no-var": "error",
