@@ -35,10 +35,8 @@ pipeline {
                     sh 'aws --version'
 
                     echo 'NPM Version:'
-                    sh '/usr/local/node-v20.9.0-linux-x64/bin/npm -v'
+                    sh 'npm --version'
 
-                    // Install npm dependencies
-                    sh 'npm install'
                 }
             }
         }
