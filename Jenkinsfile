@@ -21,13 +21,24 @@ pipeline {
             steps {
                 // Install Node.js and npm
                 script {
+                    // Check versions
+                    echo 'Maven Version:'
+                    sh 'mvn --version'
+
+                    echo 'Git Version:'
+                    sh 'git --version'
+
+                    echo 'Java Version:'
+                    sh 'java -version'
+
+                    echo 'AWS CLI Version:'
+                    sh 'aws --version'
+
+                    echo 'NPM Version:'
+                    sh 'npm -v'
+
                     // Install npm dependencies
-                    mvn -v
-                    git -v
-                    java --version
-                    aws --version
-                    npm -v
-                    npm install
+                    sh 'npm install'
                 }
             }
         }
