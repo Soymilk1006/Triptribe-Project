@@ -22,12 +22,12 @@ pipeline {
                 // Install Node.js and npm
                 script {
                     // Install npm dependencies
-                    echo 'mvn -v'
-                    echo 'git -v'
-                    echo 'java --version'
-                    echo 'aws --version'
-                    echo 'npm -v'
-                    sh 'npm install'
+                    mvn -v
+                    git -v
+                    java --version
+                    aws --version
+                    npm -v
+                    npm install
                 }
             }
         }
