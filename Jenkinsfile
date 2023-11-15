@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs 'NodeJS-20.9'
+    }
+
     environment {
         // Define your environment variables
         REPO_URL = 'https://github.com/Soymilk1006/TripTribe-Frontend.git'
@@ -36,7 +40,10 @@ pipeline {
 
                     echo 'NPM Version:'
                     sh 'npm --version'
+                    sh 'node --version'
 
+                    // Install npm dependencies
+                   
                 }
             }
         }
