@@ -12,7 +12,7 @@ pipeline {
         s3_bucket_name = 'www.qldbuildingrepairs.com-primary'
         build_folder = 'out'
     }
-
+    
     stages {
         stage('Checkout') {
             steps {
