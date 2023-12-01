@@ -27,6 +27,7 @@ pipeline {
                     sh 'npm ci'
                     sh 'npm run lint'
                     sh 'npm run prettier'
+                    sh 'book'
                 }   
             }
         }
