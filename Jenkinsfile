@@ -1,8 +1,10 @@
 pipeline {
     agent any
+
     tools {
         nodejs 'NodeJS-20.9'
     }
+
     environment {
         REPO_URL = 'https://github.com/Soymilk1006/TripTribe-Frontend.git'
         VERCEL_TOKEN = credentials('vercel-token') // Create a Jenkins secret credential with the Vercel token
@@ -18,24 +20,29 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
+        stage('Install Dependencies and Deploy') {
             steps {
                 script {
-                    // Install Node.js and npm
-   
+                    // Install Node.js and npm (assuming Node.js tool is already configured)
+
                     // Install Vercel CLI
                     sh 'npm install -g vercel'
-                    
-                    // Install project dependencies
+
+                    // Print Vercel token for debugging purposes
+                    echo "Vercel Token: ${VERCEL_TOKEN}"
+
+                    // Pull Vercel environment information
+                    sh "vercel pull --yes --environment=production --token=${VERCEL_TOKEN}"
+
+                    // Build project artifacts (if needed)
                     // sh 'npm ci'
-                    //pull Vercel environment information
-                    sh "vercel pull --yes --enviroment=production --token=${VERCEL_TOKEN}"
-                    // Build project artifacts
-                    sh "vercel build --prod --token=${VERCEL_TOKEN}"
-                    sh "vercel deploy --prebuilt --prod --token=${VERCEL_TOKEN}"
+
+                    // Deploy to Vercel
+                    //sh "vercel deploy --prod --token=${VERCEL_TOKEN}"
                 }
             }
         }
     }
 }
+
 
