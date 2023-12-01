@@ -9,7 +9,7 @@ pipeline {
         REPO_URL = 'https://github.com/Soymilk1006/TripTribe-Frontend.git'
         VERCEL_TOKEN = credentials('vercel-token') // Create a Jenkins secret credential with the Vercel token
         VERCEL_PROJECT_ID = 'prj_vndONnDyXiRdP75Of90mKChKwSqV' // Set your Vercel project ID
-        VERCEL_ORG_ID = 'your-vercel-org-id' // Set your Vercel organization ID
+        VERCEL_ORG_ID = 'team_WeLBdN2ZfGXX0JtjF0Vk96ax' // Set your Vercel organization ID
         NEXTJS_APP_NAME = 'your-nextjs-app-name'
     }
     
