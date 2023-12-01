@@ -4,18 +4,15 @@ pipeline {
     tools {
         nodejs 'NodeJS-20.9'
     }
-
     environment {
         VERCEL_TOKEN = credentials('vercel-token') // Create a Jenkins secret credential with the Vercel token
         VERCEL_PROJECT_ID = 'prj_vndONnDyXiRdP75Of90mKChKwSqV' // Set your Vercel project ID
         NEXTJS_APP_NAME = 'your-nextjs-app-name'
     }
-
+    
     stages {
         stage('Checkout') {
-            // when {
-            //     expression { env.BRANCH_NAME == 'dev' }
-            // }
+
             steps {
                 script {
                     // Checkout your Next.js app code from version control (e.g., Git)
