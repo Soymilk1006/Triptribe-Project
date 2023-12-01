@@ -1,10 +1,10 @@
-
 pipeline {
     agent any
     tools {
         nodejs 'NodeJS-20.9'
     }
     environment {
+        REPO_URL = 'https://github.com/Soymilk1006/TripTribe-Frontend.git'
         VERCEL_TOKEN = credentials('vercel-token') // Create a Jenkins secret credential with the Vercel token
         VERCEL_PROJECT_ID = 'prj_vndONnDyXiRdP75Of90mKChKwSqV' // Set your Vercel project ID
         NEXTJS_APP_NAME = 'your-nextjs-app-name'
@@ -12,12 +12,9 @@ pipeline {
     
     stages {
         stage('Checkout') {
-
             steps {
-                script {
-                    // Checkout your Next.js app code from version control (e.g., Git)
-                    checkout scm
-                }
+                // Checkout the repository from GitHub
+                checkout([$class: 'GitSCM', branches: [[name: '*/dev']], userRemoteConfigs: [[url: env.REPO_URL]]])
             }
         }
 
