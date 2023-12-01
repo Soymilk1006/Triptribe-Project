@@ -38,8 +38,8 @@ pipeline {
                     // Build project artifacts (if needed)
                     // sh 'npm ci'
 
-                    // Deploy to Vercel
-                    //sh "vercel deploy --prod --token=${VERCEL_TOKEN}"
+                    sh 'vercel build --prod --token=$VERCEL_TOKEN'
+                    sh 'vercel deploy --prebuilt --prod --token=${VERCEL_TOKEN}'
                 }
             }
         }
