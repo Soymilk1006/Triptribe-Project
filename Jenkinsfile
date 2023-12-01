@@ -55,6 +55,7 @@ pipeline {
                     echo 'npm run test'
                 }
             }
+        }    
 
         stage('npm run build') {
             steps {
