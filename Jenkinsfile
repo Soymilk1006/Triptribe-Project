@@ -1,15 +1,18 @@
 pipeline {
     agent any
+
     tools {
         nodejs 'NodeJS-20.9'
     }
+
     environment {
+        // Define your environment variables
         REPO_URL = 'https://github.com/Soymilk1006/TripTribe-Frontend.git'
-        VERCEL_TOKEN = credentials('vercel-token') // Create a Jenkins secret credential with the Vercel token
-        VERCEL_PROJECT_ID = 'prj_vndONnDyXiRdP75Of90mKChKwSqV' // Set your Vercel project ID
-        NEXTJS_APP_NAME = 'your-nextjs-app-name'
+        AWS_REGION = 'ap-southeast-2'
+        s3_bucket_name = 'www.qldbuildingrepairs.com-primary'
+        build_folder = 'out'
     }
-    
+
     stages {
         stage('Checkout') {
             steps {
@@ -20,50 +23,54 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
+                // Install Node.js and npm
                 script {
-                    // Install Node.js and npm
-   
-                    // Install Vercel CLI
-                    sh 'npm install -g vercel'
-                    
-                    // Install project dependencies
-                    // sh 'npm ci'
-                    //pull Vercel environment information
-                    sh "vercel pull --yes --enviroment=production --token=${VERCEL_TOKEN}"
-                    // Build project artifacts
-                    sh "vercel build --prod --token=${VERCEL_TOKEN}"
-                    sh "vercel deploy --prebuilt --prod --token=${VERCEL_TOKEN}"
+                    // Check versions
+                    echo 'Maven Version:'
+                    sh 'mvn --version'
+
+                    echo 'Git Version:'
+                    sh 'git --version'
+
+                    echo 'Java Version:'
+                    sh 'java -version'
+
+                    echo 'AWS CLI Version:'
+                    sh 'aws --version'
+
+                    echo 'NPM Version:'
+                    sh 'npm --version'
+                    sh 'node --version'
+
+                    // Install npm dependencies
+                   
                 }
             }
         }
 
-        stage('Test') {
+        stage('Run Tests') {
             steps {
+                // Run coverage tests (modify the command based on your project)
                 script {
-                    // Run test
-                    echo 'run test'
+                    echo 'npm run test'
                 }
             }
-        }
 
-        stage('Deploy to Vercel') {
+        stage('npm run build') {
             steps {
+                // Build the static files
                 script {
-                    echo 'npm deploy'
-                    // Deploy the Next.js app to Vercel using the Vercel CLI
-                    // sh "vercel --token ${VERCEL_TOKEN} --prod --name ${NEXTJS_APP_NAME} --project ${VERCEL_PROJECT_ID}"
+                    sh 'npm run build'
                 }
             }
         }
-    }
 
-    post {
-        success {
-            echo 'Deployment successful!'
-        }
-        failure {
-            echo 'Deployment failed!'
+        stage('deploy to s3 bucket') {
+            steps {
+                    withCredentials([aws(accessKeyVariable:'AWS_ACCESS_KEY_ID', credentialsId:'aws-credentials', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+                            sh "aws s3 cp ./${build_folder}/ s3://${S3_BUCKET_NAME}/ --recursive --region ${AWS_REGION}"
+                    }
+            }
         }
     }
 }
-
