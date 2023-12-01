@@ -9,7 +9,7 @@ pipeline {
         VERCEL_PROJECT_ID = 'prj_vndONnDyXiRdP75Of90mKChKwSqV' // Set your Vercel project ID
         NEXTJS_APP_NAME = 'your-nextjs-app-name'
     }
-
+    
     stages {
         stage('Checkout') {
             steps {
