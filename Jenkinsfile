@@ -13,9 +13,6 @@ pipeline {
 
     stages {
         stage('Checkout') {
-            when {
-                expression { env.BRANCH_NAME == 'dev' }
-            }
             steps {
                 script {
                     // Checkout your Next.js app code from version control (e.g., Git)
