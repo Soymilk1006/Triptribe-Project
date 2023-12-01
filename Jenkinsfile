@@ -33,7 +33,7 @@ pipeline {
                     echo "Vercel Token: ${VERCEL_TOKEN}"
 
                     // Pull Vercel environment information
-                    sh "vercel pull --yes --environment=production --token=${VERCEL_TOKEN}"
+                    sh 'vercel pull --yes --environment=production --token=$VERCEL_TOKEN'
 
                     // Build project artifacts (if needed)
                     // sh 'npm ci'
