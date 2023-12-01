@@ -12,7 +12,7 @@ pipeline {
         s3_bucket_name = 'www.qldbuildingrepairs.com-primary'
         build_folder = 'out'
     }
-
+    
     stages {
         stage('Checkout') {
             steps {
@@ -84,4 +84,4 @@ pipeline {
         }
     }
 }
->>>>>>> 74281a0ee9e3884a6bd93ab1ce913c16af9c1916
+
