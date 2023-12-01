@@ -12,7 +12,7 @@ pipeline {
         s3_bucket_name = 'www.qldbuildingrepairs.com-primary'
         build_folder = 'out'
     }
-
+    
     stages {
         stage('Checkout') {
             steps {
@@ -55,7 +55,16 @@ pipeline {
                     echo 'npm run test'
                 }
             }
-        }    
+        }
+
+        stage('npm coverage') {
+            steps {
+                // Run coverage tests (modify the command based on your project)
+                script {
+                    echo 'npm run coverage'
+                }
+            }
+        }
 
         stage('npm run build') {
             steps {
