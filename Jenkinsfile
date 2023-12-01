@@ -52,15 +52,6 @@ pipeline {
             }
         }
 
-        stage('Build') {
-            steps {
-                script {
-                    // Build the Next.js app
-                    echo 'npm run build'
-                }
-            }
-        }
-
         stage('Deploy to Vercel') {
             steps {
                 script {
