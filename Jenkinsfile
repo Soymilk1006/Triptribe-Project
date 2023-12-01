@@ -13,9 +13,9 @@ pipeline {
 
     stages {
         stage('Checkout') {
-            when {
-                expression { env.BRANCH_NAME == 'dev' }
-            }
+            // when {
+            //     expression { env.BRANCH_NAME == 'dev' }
+            // }
             steps {
                 script {
                     // Checkout your Next.js app code from version control (e.g., Git)
@@ -64,6 +64,7 @@ pipeline {
         stage('Deploy to Vercel') {
             steps {
                 script {
+                    echo 'npm deploy'
                     // Deploy the Next.js app to Vercel using the Vercel CLI
                     // sh "vercel --token ${VERCEL_TOKEN} --prod --name ${NEXTJS_APP_NAME} --project ${VERCEL_PROJECT_ID}"
                 }
