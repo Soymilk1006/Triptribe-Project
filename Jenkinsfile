@@ -70,17 +70,17 @@ pipeline {
             steps {
                 // Build the static files
                 script {
-                    sh 'npm run build'
+                    echo 'npm run build'
                 }
             }
         }
 
-        stage('deploy to s3 bucket') {
-            steps {
-                    withCredentials([aws(accessKeyVariable:'AWS_ACCESS_KEY_ID', credentialsId:'aws-credentials', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
-                            sh "aws s3 cp ./${build_folder}/ s3://${S3_BUCKET_NAME}/ --recursive --region ${AWS_REGION}"
-                    }
-            }
-        }
+        // stage('deploy to s3 bucket') {
+        //     steps {
+        //             withCredentials([aws(accessKeyVariable:'AWS_ACCESS_KEY_ID', credentialsId:'aws-credentials', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+        //                     sh "aws s3 cp ./${build_folder}/ s3://${S3_BUCKET_NAME}/ --recursive --region ${AWS_REGION}"
+        //             }
+        //     }
+        // }
     }
 }
