@@ -39,7 +39,7 @@ pipeline {
                     // sh 'npm ci'
 
                     sh 'vercel build --prod --token=$VERCEL_TOKEN'
-                    sh 'vercel deploy --prebuilt --prod --token=${VERCEL_TOKEN}'
+                    sh 'vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN'
                 }
             }
         }
