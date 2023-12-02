@@ -53,7 +53,6 @@ pipeline {
             }
         }
     }
-    
 post {
         success {
             emailext body: 'TEST', subject: 'TEST', to: 'devon.li.devops@gmail.com'
