@@ -56,10 +56,7 @@ pipeline {
     
 post {
         success {
-            emailext subject: 'Build Successful',
-                body: 'The Jenkins build was successful. $DEFAULT_CONTENT',
-                replyTo: '$DEFAULT_REPLYTO',
-                to: '$DEFAULT_RECIPIENTS'
+            emailext body: 'TEST', subject: 'TEST', to: 'devon.li.devops@gmail.com'
         }
         failure {
             emailext subject: 'Build Failed',
