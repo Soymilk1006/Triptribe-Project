@@ -63,7 +63,7 @@ post {
                 [$class: 'DevelopersRecipientProvider'],
                 [$class: 'RequesterRecipientProvider'] 
             ]
-                to: '$DEFAULT_RECIPIENTS'
+                to: 'devon.li.devops@gmail.com'
             
         }
         failure {
@@ -74,7 +74,7 @@ post {
                 [$class: 'DevelopersRecipientProvider'],
                 [$class: 'RequesterRecipientProvider'] 
             ]
-                to: '$DEFAULT_RECIPIENTS'
+                to: 'devon.li.devops@gmail.com'
         }
     }
 }
