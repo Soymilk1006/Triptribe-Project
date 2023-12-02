@@ -59,7 +59,7 @@ post {
                 emailext subject: 'Build Failed',
                 body: 'The Jenkins build failed. Please check the build logs for more information. $DEFAULT_CONTENT',
                 replyTo: '$DEFAULT_REPLYTO',
-                to: 'devon.li.devops@gmail.com
+                to: 'devon.li.devops@gmail.com'
         }
         failure {
             emailext subject: 'Build Failed',
