@@ -62,7 +62,7 @@ post {
                 [$class: 'CulpritsRecipientProvider'],
                 [$class: 'DevelopersRecipientProvider'],
                 [$class: 'RequesterRecipientProvider'] 
-            ]
+            ],
                 to: 'devon.li.devops@gmail.com'
             
         }
@@ -73,7 +73,7 @@ post {
                 [$class: 'CulpritsRecipientProvider'],
                 [$class: 'DevelopersRecipientProvider'],
                 [$class: 'RequesterRecipientProvider'] 
-            ]
+            ],
                 to: 'devon.li.devops@gmail.com'
         }
     }
