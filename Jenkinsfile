@@ -57,7 +57,7 @@ pipeline {
 post {
         success {
             emailext subject: 'Build Successful',
-                body: 'The Jenkins build was successful.',
+                body: 'The Jenkins build was successful. $DEFAULT_CONTENT',
                 recipientProviders: [
                     [$class: 'CulpritsRecipientProvider'],
                     [$class: 'DevelopersRecipientProvider'],
@@ -68,7 +68,7 @@ post {
         }
         failure {
             emailext subject: 'Build Failed',
-                body: 'The Jenkins build failed. Please check the build logs for more information.',
+                body: 'The Jenkins build failed. Please check the build logs for more information. $DEFAULT_CONTENT',
                 recipientProviders: [
                     [$class: 'CulpritsRecipientProvider'],
                     [$class: 'DevelopersRecipientProvider'],
