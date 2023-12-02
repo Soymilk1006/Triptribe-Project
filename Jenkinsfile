@@ -63,7 +63,6 @@ post {
                 [$class: 'DevelopersRecipientProvider'],
                 [$class: 'RequesterRecipientProvider'] 
             ]
-                replyTo: '$DEFAULT_REPLYTO',
                 to: '$DEFAULT_RECIPIENTS'
             
         }
@@ -75,7 +74,6 @@ post {
                 [$class: 'DevelopersRecipientProvider'],
                 [$class: 'RequesterRecipientProvider'] 
             ]
-                replyTo: '$DEFAULT_REPLYTO',
                 to: '$DEFAULT_RECIPIENTS'
         }
     }
