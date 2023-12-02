@@ -48,6 +48,12 @@ pipeline {
                     // Build project artifacts (if needed)
                     // sh 'npm ci'
                     sh 'vercel build --token=$VERCEL_TOKEN'
+
+                    input(
+                    id: 'deployToProduction',
+                    message: 'Do you want to deploy to production?',
+                    ok: 'Deploy'
+                    )
                     sh 'vercel deploy --prebuilt --token=${VERCEL_TOKEN}'
                 }
             }
