@@ -58,22 +58,12 @@ post {
         success {
             emailext subject: 'Build Successful',
                 body: 'The Jenkins build was successful. $DEFAULT_CONTENT',
-                recipientProviders: [
-                    [$class: 'CulpritsRecipientProvider'],
-                    [$class: 'DevelopersRecipientProvider'],
-                    [$class: 'RequesterRecipientProvider']
-                ],
                 replyTo: '$DEFAULT_REPLYTO',
                 to: '$DEFAULT_RECIPIENTS'
         }
         failure {
             emailext subject: 'Build Failed',
                 body: 'The Jenkins build failed. Please check the build logs for more information. $DEFAULT_CONTENT',
-                recipientProviders: [
-                    [$class: 'CulpritsRecipientProvider'],
-                    [$class: 'DevelopersRecipientProvider'],
-                    [$class: 'RequesterRecipientProvider']
-                ],
                 replyTo: '$DEFAULT_REPLYTO',
                 to: '$DEFAULT_RECIPIENTS'
         }
