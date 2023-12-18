@@ -25,7 +25,6 @@ test/cache
 
 *.zip
 
-vars.sh
 tf.plan
 
 # Make it possible to check-in the bootstrap state
