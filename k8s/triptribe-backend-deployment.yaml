@@ -1,0 +1,34 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: staging
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: triptribe-backend
+  namespace: staging
+spec:
+  selector:
+    matchLabels:
+      run: triptribe-backend
+  # remove replica if using gitops
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: triptribe-backend
+    spec:
+      containers:
+      - name: triptribe-backend
+        image: 067912176361.dkr.ecr.ap-southeast-2.amazonaws.com/triptribe-backend:12
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 200m
+            memory: 256Mi
+          requests:
+            cpu: 200m
+            memory: 256Mi
