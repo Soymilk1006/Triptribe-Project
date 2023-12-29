@@ -14,7 +14,7 @@ spec:
     matchLabels:
       run: triptribe-backend
   # remove replica if using gitops
-  replicas: 1
+  # replicas: 1
   template:
     metadata:
       labels:
@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: triptribe-backend
-        image: 067912176361.dkr.ecr.ap-southeast-2.amazonaws.com/triptribe-backend:12
+        image: 067912176361.dkr.ecr.ap-southeast-2.amazonaws.com/triptribe-backend:jenkins-my_backend_pipeline-12
         ports:
         - containerPort: 80
         resources:
