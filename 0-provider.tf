@@ -22,7 +22,7 @@ terraform {
     key     = "backend_UAT_infra.tfstate" # Optionally, set a different state file name
     region  = "ap-southeast-2"
     encrypt = true
-    #dynamodb_table = "terraform-lock"    # Optionally, use DynamoDB for state locking
+    dynamodb_table = "terraform-lock"    # Optionally, use DynamoDB for state locking
   }
 
 }
