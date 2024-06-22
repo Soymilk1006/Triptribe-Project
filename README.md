@@ -58,7 +58,4 @@ Two environments are set up for the backend infrastructure: UAT (User Acceptance
 - **Auto Scaling and Load Balancing**: Achieved through AWS EKS Fargate in both environments.
 - **Environment Variables**: Retrieved from AWS Parameter Store to ensure consistency and security.
 
-## Conclusion
-
-Thank you for taking the time to learn about the project architecture. Each component has been carefully designed to ensure high availability, scalability, and rapid disaster recovery. For any questions or further clarification, please feel free to reach out.
 
