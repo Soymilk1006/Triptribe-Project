@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: triptribe-k8s
+  namespace: staging
+  annotations:
+    alb.ingress.kubernetes.io/healthcheck-path: /api
+    alb.ingress.kubernetes.io/target-type: ip
+spec:
+  selector:
+    app: triptribe-k8s
+  ports:
+    - port: 8080
+      targetPort: 8080
+  type: NodePort
+
